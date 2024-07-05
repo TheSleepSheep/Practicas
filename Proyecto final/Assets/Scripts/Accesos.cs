@@ -7,6 +7,9 @@ using Unity.VisualScripting;
 
 public class Accesos : MonoBehaviour
 {
+    public GameObject Panelacceder;
+    public GameObject Pantallaprincipal;
+
     public GameObject panelAlertas;
     public string[] textoAlertas;
 
@@ -20,8 +23,6 @@ public class Accesos : MonoBehaviour
     public TMP_InputField NuevaContrasena;
 
     public TMP_Text alertasDisplay;
-    public GameObject Panelacceder;
-    public GameObject Pantallaprincipal;
 
 
     void Start()
@@ -35,6 +36,8 @@ public class Accesos : MonoBehaviour
 
     public void AccerderConUsuario()
     {
+        Debug.Log("Accediendo con Usuario...");
+
         if (usuarios.Contains(nombreUsuario.text))
         {
             panelAlertas.SetActive(true);
@@ -65,9 +68,11 @@ public class Accesos : MonoBehaviour
     {
         if (contras.Contains(Contrasena.text))
         {
+            Debug.Log("Accediendo con contraseña...");
+
             panelAlertas.SetActive(true);
-        Panelacceder.gameObject.SetActive(false);
-        Pantallaprincipal.gameObject.SetActive(true);
+            Panelacceder.SetActive(false);
+            Pantallaprincipal.SetActive(true);
         }
         else
         {
