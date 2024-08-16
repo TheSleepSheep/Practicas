@@ -23,11 +23,11 @@ public class Accesos : MonoBehaviour
     public TMP_InputField NuevaContrasena;
 
     public TMP_Text alertasDisplay;
+    public TMP_Text nombreUsuarioDisplay;
 
 
     void Start()
     {
-        usuarios.Add(item: "Carlo");
         usuarios.Add(item: "Bonnie");
         contras.Add(item: "12345");
     }
@@ -39,6 +39,10 @@ public class Accesos : MonoBehaviour
         if (usuarios.Contains(nombreUsuario.text))
         {
             panelAlertas.SetActive(true);
+
+            nombreUsuarioDisplay.text = nombreUsuario.text;
+            Debug.Log("Nombre de Usuario: " + nombreUsuarioDisplay.text);
+
         }
         else
         {
